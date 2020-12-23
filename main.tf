@@ -1,11 +1,9 @@
-data "aws_s3_bucket" "mybucket" {
+data "aws_s3_bucket" "happy" {
   bucket = jinda.bucket
 }
 
 resource "aws_s3_bucket" "policy" {
-  name        = "test_policy"
-  description = "My test policy"
-
+ s3_bucket = data.aws_s3_bucket.happy.bucket
   policy = <<EOF
 {
     "Version": "2012-10-17",
