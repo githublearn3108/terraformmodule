@@ -1,3 +1,7 @@
+data "aws_s3_bucket" "mybucket" {
+  bucket = jinda.bucket
+}
+
 resource "aws_s3_bucket" "policy" {
   name        = "test_policy"
   description = "My test policy"
